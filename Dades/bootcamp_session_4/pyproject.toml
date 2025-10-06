@@ -1,0 +1,44 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools>=68",
+     "wheel"
+]
+
+[project]
+name = "myproject"
+version = "0.1.0"
+description = "One-line description"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+authors = [{name = "Your Name", email = "you@example.com"}]
+dependencies = [
+    "pandas>=2.2",
+    "astroquery>=0.4",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+    "pytest-cov>=5.0",
+]
+dev = [
+    "build",
+    "mkdocs",
+    "mkdocstrings[python]",
+    "mkdocs-material",
+    "pre-commit>=3.8",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = [ "mymodule" ]
+
+[tool.pytest.ini_options]
+addopts = "-v -q --cov=src --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100

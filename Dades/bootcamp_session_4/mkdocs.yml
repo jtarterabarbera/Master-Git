@@ -1,0 +1,18 @@
+site_name: My Project
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - API:
+      - Module: mymodule.md
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: true
+            separate_signature: true
+            heading_level: 2
